@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: Onetwothree123
+      MYSQL_DATABASE: trackerdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - tracker-net
+
+  app:
+    build: .
+    container_name: tracker-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/trackerdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Onetwothree123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - tracker-net
+
+volumes:
+  mysql-data:
+
+networks:
+  tracker-net:

@@ -1,0 +1,12 @@
+com\beyondsubstance\tracker\model\UserLog.class
+com\beyondsubstance\tracker\repository\UserRepository.class
+com\beyondsubstance\tracker\security\JwtFilter.class
+com\beyondsubstance\tracker\security\SecurityConfig.class
+com\beyondsubstance\tracker\repository\UserLogRepository.class
+com\beyondsubstance\tracker\model\User.class
+com\beyondsubstance\tracker\controller\AuthController.class
+com\beyondsubstance\tracker\security\CustomUserDetailsService.class
+com\beyondsubstance\tracker\security\JwtUtil.class
+com\beyondsubstance\tracker\controller\UserLogController.class
+com\beyondsubstance\tracker\TrackerApplication.class
+com\beyondsubstance\tracker\controller\AuthController$AuthRequest.class
