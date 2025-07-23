@@ -4,7 +4,7 @@ services:
     image: mysql:8.0
     container_name: mysqldb
     environment:
-      MYSQL_ROOT_PASSWORD: Onetwothree123
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: trackerdb
     ports:
       - "3306:3306"
@@ -23,7 +23,7 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/trackerdb
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: Onetwothree123
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     networks:
       - tracker-net
